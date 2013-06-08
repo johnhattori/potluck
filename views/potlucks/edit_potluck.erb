@@ -1,0 +1,10 @@
+
+
+
+<form method="post" action="/edit_potluck/<%= @potluck.id %>">
+  <label>Name</label>
+  <input type="text" name="potluck[name]" value="<%= @potluck.name %>">
+  <label>Date</label>
+  <input type="text" name="potluck[date]" value="<%= @potluck.date %>">
+  <button>save changes!</button>
+</form>

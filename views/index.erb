@@ -1,0 +1,6 @@
+<ul>
+<% @potlucks.each do |potluck| %>
+<li><%= potluck.name %>, <%= potluck.date %></li>
+<a href="/edit_potluck/<%= potluck.id %>">Edit</a>
+<% end %>
+</ul>
