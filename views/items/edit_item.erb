@@ -1,0 +1,21 @@
+Items:
+
+<form method="post" action="/save_item/<%= @item.id %>">
+  Item:
+  <%= pre_filled_input("item[name]]", @item.name) %>
+  <br>
+
+  User:
+  <%= pre_filled_input("item[person]]", @item.person) %>
+  <br>
+
+
+  <% Tag.all.each do |tag| %>
+    <input type="checkbox" name="tag[tag_ids][]" value="<%= tag.id %>">
+    <%= tag.name %>
+    <br>
+  <% end %>
+  <br>
+
+  <button>Save Tag</button>
+</form>

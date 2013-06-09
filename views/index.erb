@@ -1,6 +1,9 @@
 <ul>
 <% @potlucks.each do |potluck| %>
-<li><%= potluck.name %>, <%= potluck.date %></li>
-<a href="/edit_potluck/<%= potluck.id %>">Edit</a>
+  <li>
+    <%= potluck.name %> on <%= potluck.date %>
+    <a href="/edit_potluck/<%= potluck.id %>">Edit</a>
+  </li>
 <% end %>
 </ul>
+
