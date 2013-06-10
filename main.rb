@@ -1,9 +1,6 @@
 require "bundler"
 Bundler.require
 
-
-
-
 # 1. Establish a connection to the specific database we're using.
 ActiveRecord::Base.establish_connection(
   :adapter => 'postgresql',
@@ -14,14 +11,13 @@ ActiveRecord::Base.establish_connection(
   :encoding => 'utf8'
 )
 
-
 require_relative "models/item"
 require_relative "models/potluck"
 require_relative "models/tag"
 require_relative "models/user"
 
 require_relative "controllers/items"
-require_relative "controllers/potlucks"
+require_relative "controllers/potlucks"ß
 require_relative "controllers/tags"
 require_relative "controllers/users"
 
