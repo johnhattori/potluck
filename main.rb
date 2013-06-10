@@ -17,7 +17,7 @@ require_relative "models/tag"
 require_relative "models/user"
 
 require_relative "controllers/items"
-require_relative "controllers/potlucks"ß
+require_relative "controllers/potlucks"
 require_relative "controllers/tags"
 require_relative "controllers/users"
 
