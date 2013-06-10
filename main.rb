@@ -1,7 +1,8 @@
-require 'sinatra'
-require 'sinatra/reloader'
-require 'sinatra/activerecord'
-require 'pry'
+require "bundler"
+Bundler.require
+
+
+
 
 # 1. Establish a connection to the specific database we're using.
 ActiveRecord::Base.establish_connection(

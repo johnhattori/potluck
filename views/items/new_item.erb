@@ -4,7 +4,15 @@
   <br>
   Guest:
   <input type="text" name="user[name]">
+  <br>
+  Tags:
+  <% Tag.all.each do |tag| %>
+      <input type="checkbox" name="item[tag_ids][]" value="<%= tag.id %>"><%= tag.name %>
+    <% end %>
+  <br>
 
   <button>Save item</button>
 </form>
+
+
 

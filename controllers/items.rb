@@ -1,11 +1,15 @@
 get '/items/new_item/:potluck_id' do
     @potluck_id = params[:potluck_id]
+    @tag_id = params[:tag_id]
+
     erb :"items/new_item"
+
 end
 
 post "/new_item/:potluck_id" do
   item = Item.new(params[:item])
   item.update_attributes(:potluck_id => params[:potluck_id])
+
   person = User.find_or_create_by_name(params[:user])
   item.update_attributes(:person_id => person.id)
 
@@ -15,6 +19,8 @@ post "/new_item/:potluck_id" do
     erb :"items/new_item"
   end
 end
+
+
 
 post "/save_item/:item_id" do
   @item = Item.find_by_id(params[:item_id])
@@ -26,7 +32,6 @@ post "/save_item/:item_id" do
   end
 end
 
-get '/edit_item/:item_id' do
-    erb :"items/edit_item"
-end
+
+
 

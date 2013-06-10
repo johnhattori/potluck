@@ -1,13 +1,17 @@
 <form method="post" action="/edit_potluck/<%= @potluck.id %>">
-  <label>Name</label>
+  <label>Name:</label>
   <input type="text" name="potluck[name]" value="<%= @potluck.name %>">
-  <label>Date</label>
+  <label>Date:</label>
   <input type="text" name="potluck[date]" value="<%= @potluck.date %>">
-  <button>save changes!</button>
+  <button>save changes</button>
 </form>
 
 
   <a href="/items/new_item/<%= @potluck.id %>">Add Item</a>
+  <form method="get" action="/delete_potluck/<%= @potluck.id %>">
+    <p>To cancel potluck:</p>
+    <button>delete</button>
+  </form>
 
 
 <ul>

@@ -19,3 +19,37 @@ Items:
 
   <button>Save Tag</button>
 </form>
+
+
+<!-- in new_item.erb -->
+
+Tag:
+  <input type="text" name="tag[name]">
+  <% Tag.all.each do |tag| %>
+    <input type="checkbox" name="tag[tag_ids][]" value="<%= tag.id %>">
+    <%= tag.name %>
+    <br>
+
+    <!-- in items.rb -->
+
+    tag = Tag.new(params[:tag])
+    tag.update_attributes(:potluck_id => params[:potluck_id])
+
+    get '/edit_item/:item_id' do
+        erb :"items/edit_item"
+    end
+
+
+<!-- In tag.rb? -->
+    tag = Tag.find_or_create_by_name(params[:tag])
+    tag.update_attributes(:tag_id => tag.id)
+
+<!-- In tab erb? -->
+
+Tag:
+<input type="text" name="tag[name]">
+<% Tag.all.each do |tag| %>
+  <input type="checkbox" name="tag[tag_ids][]" value="<%= tag.id %>">
+  <%= tag.name %>
+  <br>
+<% end %>

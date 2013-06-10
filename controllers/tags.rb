@@ -1,5 +1,5 @@
 # process "new potluck" form
-post "/new_tag" do
+post "/save_tag/<%= @tag.id %>" do
   @tag = Tag.new(params[:tag])
 
   if @tag.save
