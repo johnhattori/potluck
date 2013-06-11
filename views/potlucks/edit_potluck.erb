@@ -8,17 +8,18 @@
 
 
   <a href="/items/new_item/<%= @potluck.id %>">Add Item</a>
+  <br>
+  <a href="/tags/new_tag">Add Tag</a>
   <form method="get" action="/delete_potluck/<%= @potluck.id %>">
-    <p>To cancel potluck:</p>
-    <button>delete</button>
+    <p>To cancel potluck:
+    <button>delete</button></p>
   </form>
 
 
 <ul>
 <% @items.each do |item| %>
   <li>
-    <!--fix eventually-->
-    <%= item.name %> brought by <%= User.find_or_create_by_id(item.person_id).name %>
+    <%= item.name %> brought by <%= item.person.name %> (<%= item.list_of_tags %>)
   </li>
 <% end %>
 </ul>

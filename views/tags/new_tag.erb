@@ -1,12 +1,15 @@
-<form method="post" action="/save_tag/<%= @tag.id %>">
+<form method="post" action="/create_tag">
 
-  Tag:<br>
-  <% Tag.all.each do |actor| %>
-    <input type="checkbox" name="tag[tag_ids][]" value="<%= tag.id %>">
-    <%= actor.name %>
-    <br>
-  <% end %>
+  <input name="tag[name]" type="text">
   <br>
+
+  <% @tags.each do |tag| %>
+    <input type="checkbox" name="item[tag_id][]" value="<%= tag.id %>">
+    <%= tag.name %>
+    <br>
+    <% end %>
+    <br>
 
   <button>Save Tag</button>
 </form>
+

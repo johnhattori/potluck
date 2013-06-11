@@ -3,13 +3,14 @@
   <input type="text" name="item[name]">
   <br>
   Guest:
-  <input type="text" name="user[name]">
+  <input type="text" name="item[person]">
   <br>
   Tags:
   <% Tag.all.each do |tag| %>
       <input type="checkbox" name="item[tag_ids][]" value="<%= tag.id %>"><%= tag.name %>
     <% end %>
   <br>
+
 
   <button>Save item</button>
 </form>

@@ -1,8 +1,40 @@
-<p>
-  <a href="/potlucks/new_potluck">Create new Potluck</a> |
-  <a href="/">All Potlucks</a>
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Potluck Organizer</title>
 
-<hr>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
 
-<%= yield %>
+  <script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div id="bank" class="span6 offset3">
+        <h1>Potluck Organizer</h1>
+
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a class="brand" href="/">Potluck</a>
+            <ul class="nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/potlucks/new_potluck">Create a new Potluck</a></li>
+            </ul>
+          </div>
+        </div>
+        <%= yield %>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+

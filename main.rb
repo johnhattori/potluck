@@ -14,12 +14,12 @@ ActiveRecord::Base.establish_connection(
 require_relative "models/item"
 require_relative "models/potluck"
 require_relative "models/tag"
-require_relative "models/user"
+require_relative "models/person"
 
 require_relative "controllers/items"
 require_relative "controllers/potlucks"
 require_relative "controllers/tags"
-require_relative "controllers/users"
+require_relative "controllers/people"
 
 require_relative "helpers/form_helpers"
 

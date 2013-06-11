@@ -7,13 +7,15 @@ get '/items/new_item/:potluck_id' do
 end
 
 post "/new_item/:potluck_id" do
-  item = Item.new(params[:item])
-  item.update_attributes(:potluck_id => params[:potluck_id])
 
-  person = User.find_or_create_by_name(params[:user])
-  item.update_attributes(:person_id => person.id)
+  person = Person.find_or_create_by_name(params[:item][:person])
+
+  params[:item][:person] = person
+  item = Item.new(params[:item])
+
 
   if item.save
+    item.update_attribute(:potluck_id, params[:potluck_id])
     redirect "/"
   else
     erb :"items/new_item"
@@ -24,7 +26,6 @@ end
 
 post "/save_item/:item_id" do
   @item = Item.find_by_id(params[:item_id])
-
   if @item.update_attributes(params[:item])
     redirect "/"
   else
